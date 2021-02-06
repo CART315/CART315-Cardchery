@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class cameraLock : MonoBehaviour
+public class targetCode : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -11,7 +11,7 @@ public class cameraLock : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         
     }
