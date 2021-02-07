@@ -25,7 +25,7 @@ public class timer : MonoBehaviour
         }
         if (timeLeft <= 0)
         {
-            // endGame();
+            FindObjectOfType<gameManager>().EndGame();
         }
         timeLeftText.text = "Time Left: " + timeLeftShown;
     }
