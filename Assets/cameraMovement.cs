@@ -30,7 +30,6 @@ public class cameraMovement : MonoBehaviour
         pitch = Mathf.Clamp(pitch, -50f, 30f);
 
         transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
-
         // https://www.youtube.com/watch?v=lYIRm4QEqro
     }
 }
