@@ -57,6 +57,7 @@ public class throwCard : MonoBehaviour
                 transform.parent = null;
                 makeCard.cardHave = false;
                 throwDirection = player.transform.forward;
+                damage = 1;
             }
         }
     }
