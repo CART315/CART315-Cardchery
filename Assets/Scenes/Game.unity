@@ -717,6 +717,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 963194225}
+    - target: {fileID: 3723028499499881283, guid: ca46f817a8d83934e8e76704980bb122, type: 3}
+      propertyPath: cardSpin.y
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca46f817a8d83934e8e76704980bb122, type: 3}
 --- !u!1 &524551481

@@ -7,20 +7,22 @@ public class throwCard : MonoBehaviour
     public GameObject cardLocation;
     public GameObject cardProjectile;
     public GameObject player;
-    public Vector3 cardSpin = new Vector3(0, 20, 0);
+    public Vector3 cardSpin = new Vector3(0, 8, 0);
     bool thrown = false;
+    int damage = 0;
     Vector3 throwingForce = new Vector3(0, 0, 700f);
     // Start is called before the first frame update
     void Start()
     {
         thrown = false;
+        this.gameObject.tag = "card";
         transform.rotation = Quaternion.Euler(2.307f, -18.854f, 6.724f);
         GetComponent<Rigidbody>().useGravity = false;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        Destroy(this);
+        Destroy(this.gameObject);
     }
 
     // Update is called once per frame
@@ -29,7 +31,7 @@ public class throwCard : MonoBehaviour
         // if the card is in the hand, it is not thrown. It is placed in the hand, if it is thrown, leaves the hand and spins until it hits something
         if (thrown == true)
         {
-            GetComponent<Transform>().Rotate(cardSpin);
+         //   GetComponent<Transform>().Rotate(cardSpin);
             
         }
         else

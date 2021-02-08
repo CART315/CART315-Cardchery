@@ -22,6 +22,7 @@ public class makeCard : MonoBehaviour
             Vector3 cardPositionInHand = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
             GameObject newCard = Instantiate(cardProjectile, cardPositionInHand, Quaternion.Euler(2.307f, -18.854f, 6.724f));
             newCard.transform.SetParent(player.transform);
+            newCard.tag = "card";
             cardHave = true;
         }
 

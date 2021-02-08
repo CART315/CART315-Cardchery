@@ -111,7 +111,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardLocation: {fileID: 464380180067220920, guid: 3c7e98adbfb3f0741ab6a043ce794552, type: 3}
   cardProjectile: {fileID: 641098271841493847}
-  cardSpin: {x: 0, y: 2, z: 0}
+  player: {fileID: 0}
+  cardSpin: {x: 0, y: 15, z: 0}
 --- !u!54 &-1787613108057610012
 Rigidbody:
   m_ObjectHideFlags: 0

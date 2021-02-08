@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class gameManager : MonoBehaviour
 {
@@ -19,6 +20,6 @@ public class gameManager : MonoBehaviour
     // when the timer runs out, the game ends
     public void EndGame()
     {
-
+        SceneManager.LoadSceneAsync("End", LoadSceneMode.Single);
     }
 }
