@@ -20,7 +20,11 @@ public class makeCard : MonoBehaviour
         if (cardHave == false)
         {
             Vector3 cardPositionInHand = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
-            GameObject newCard = Instantiate(cardProjectile, cardPositionInHand, Quaternion.Euler(2.307f, -18.854f, 6.724f));
+            Vector3 cardRotationInHand = new Vector3(this.transform.rotation.x, this.transform.rotation.y, this.transform.rotation.z);
+            GameObject newCard = Instantiate(cardProjectile, cardPositionInHand, Quaternion.Euler(cardRotationInHand));
+            GameObject player = GameObject.Find("PlayerCamera");
+         //   newCard.transform.position = player.transform.position + player.transform.forward;
+        //    newCard.transform.forward = player.transform.forward;
             newCard.transform.SetParent(player.transform);
             newCard.tag = "card";
             cardHave = true;

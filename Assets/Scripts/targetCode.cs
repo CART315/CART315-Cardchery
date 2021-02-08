@@ -5,8 +5,8 @@ using UnityEngine;
 public class targetCode : MonoBehaviour
 {
 
-    float targetHealth;
-    float targetMaxHealth;
+    int targetHealth;
+    int targetMaxHealth;
 
     // Start is called before the first frame update
     void Start()
@@ -14,6 +14,8 @@ public class targetCode : MonoBehaviour
         // set the starting health
         targetMaxHealth = Random.Range(1, 4);
         targetHealth = targetMaxHealth;
+        // this is a target
+        gameObject.tag = "target";
         // set rotation
         this.transform.rotation = Quaternion.Euler(0, -90, 90);
         // make it pop up from below
@@ -24,8 +26,19 @@ public class targetCode : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "card")
-        {
+        { 
             Destroy(collision.gameObject);
+        }
+    }
+
+    public void takeDamage(int amount)
+    {
+        targetHealth -= amount;
+        // if this dies, gain points
+        if (targetHealth <= 0)
+        {
+            Destroy(this.gameObject);
+            scoring.playerScore += targetMaxHealth * 5;
         }
     }
 

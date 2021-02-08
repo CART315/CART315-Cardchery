@@ -6,11 +6,12 @@ public class throwCard : MonoBehaviour
 {
     public GameObject cardLocation;
     public GameObject cardProjectile;
-    public GameObject player;
     public Vector3 cardSpin = new Vector3(0, 8, 0);
     bool thrown = false;
-    int damage = 0;
-    Vector3 throwingForce = new Vector3(0, 0, 700f);
+    int damage = 1;
+    int speed = 30;
+//    Vector3 throwingForce = new Vector3(0, 0, 700f);
+    Vector3 throwDirection;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,24 +21,31 @@ public class throwCard : MonoBehaviour
         GetComponent<Rigidbody>().useGravity = false;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    // when this hits a target, that target loses health equal to this card's damage
+    void OnCollisionEnter(Collision collision)
     {
-        Destroy(this.gameObject);
+        if (collision.gameObject.tag == "target")
+        {
+            collision.gameObject.GetComponent<targetCode>().takeDamage(damage);
+        }
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        GameObject player = GameObject.Find("PlayerCamera");
         // if the card is in the hand, it is not thrown. It is placed in the hand, if it is thrown, leaves the hand and spins until it hits something
         if (thrown == true)
         {
-         //   GetComponent<Transform>().Rotate(cardSpin);
+            GetComponent<Transform>().Rotate(cardSpin);
+
+            transform.position += throwDirection * speed * Time.deltaTime;
             
         }
         else
         {
             // go to the hand area
-            Vector3 cardPositionInHand = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
+            Vector3 cardPositionInHand = new Vector3(cardLocation.transform.position.x, cardLocation.transform.position.y, cardLocation.transform.position.z);
            // Debug.Log("hand" + cardPositionInHand);
            // Debug.Log("current" + transform.position);
           //  transform.position = cardPositionInHand;
@@ -45,10 +53,10 @@ public class throwCard : MonoBehaviour
             if (Input.GetMouseButtonDown(0) && thrown == false)
             {
                 thrown = true;
-                this.GetComponent<Rigidbody>().AddForce(throwingForce);
                 GetComponent<Rigidbody>().useGravity = true;
                 transform.parent = null;
                 makeCard.cardHave = false;
+                throwDirection = player.transform.forward;
             }
         }
     }
