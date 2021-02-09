@@ -239,6 +239,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fe1ce7d73d7a24eb2a32a11afdd4bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardSlotOne: {fileID: 514661378}
+  cardSlotTwo: {fileID: 514661378}
+  cardSlotThree: {fileID: 514661378}
+  cardSlotFour: {fileID: 514661378}
+  cardSlotFive: {fileID: 514661378}
 --- !u!1 &240350851
 GameObject:
   m_ObjectHideFlags: 0

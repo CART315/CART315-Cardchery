@@ -58,7 +58,6 @@ public class throwCard : MonoBehaviour
                 damage = gameManager.cardEffects[gameManager.cardSlots[gameManager.cardChosen]];
                 // randomly choose another card to replace that slot
                 gameManager.cardSlots[gameManager.cardChosen] = Random.Range(0, 3);
-                Debug.Log(gameManager.cardSlots[gameManager.cardChosen] + "ok" + gameManager.cardChosen);
                 // start the throw cooldown timer
                 gameManager.throwCooldownStarted = true;
             }
