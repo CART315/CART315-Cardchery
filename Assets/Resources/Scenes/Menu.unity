@@ -470,6 +470,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fe1ce7d73d7a24eb2a32a11afdd4bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardSlotOne: {fileID: 1584882551}
+  cardSlotTwo: {fileID: 1584882551}
+  cardSlotThree: {fileID: 1584882551}
+  cardSlotFour: {fileID: 1584882551}
+  cardSlotFive: {fileID: 1584882551}
 --- !u!1 &795366597
 GameObject:
   m_ObjectHideFlags: 0
@@ -957,7 +962,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 33
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -970,11 +975,11 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Instructions:
 
-    You are a card thrower. Pick a card using the QWERT
-    keys then throw it with Left mouse button. Look around with the mouse to aim.
-    Use the right cards to maximise the amount of targets you destroy. Gain points
-    when you destroy a target. Rack up as many points as possible in one minute.
-    Good Luck!'
+    You are a card thrower. Pick a card that deals the
+    damage written on it using the QWERT keys then throw it with Left mouse button.
+    Look around with the mouse to aim. Use the right cards to maximise the amount
+    of targets you destroy. Gain points when you destroy a target. Rack up as many
+    points as possible in one minute. Good Luck!'
 --- !u!222 &1584882552
 CanvasRenderer:
   m_ObjectHideFlags: 0

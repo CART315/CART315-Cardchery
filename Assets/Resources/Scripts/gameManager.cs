@@ -13,33 +13,31 @@ public class gameManager : MonoBehaviour
     // meaning either 1 damage, 2 damage or 3 damage
     public static List<int> cardSlots = new List<int>();
     // reference the card slots UI
-    public Sprite cardSlotOne;
-    public Sprite cardSlotTwo;
-    public Sprite cardSlotThree;
-    public Sprite cardSlotFour;
-    public Sprite cardSlotFive;
+    public Text cardSlotOne;
+    public Text cardSlotTwo;
+    public Text cardSlotThree;
+    public Text cardSlotFour;
+    public Text cardSlotFive;
     // make the sprite variables and the array of the cards
-    Sprite Card1Damage;
-    Sprite Card2Damage;
-    Sprite Card3Damage;
+    // Sprite Card1Damage;
+    // Sprite Card2Damage;
+    // Sprite Card3Damage;
     // which screen we are on (menu, game, end)
     public static int gameScreens = 0;
-    public static Sprite[] cardSprites = new Sprite[3];
+    // public static Sprite[] cardSprites = new Sprite[3];
     public static int[] cardEffects = new int[3];
 
     // Start is called before the first frame update
     void Start()
     {
-        gameScreens = 0;
         // add the images and effects of each card type into the arrays
-        Card1Damage = Resources.Load<Sprite>("Images/card1");
-        Card2Damage = Resources.Load<Sprite>("Images/card2");
-        Card3Damage = Resources.Load<Sprite>("Images/card3");
+        // Card1Damage = Resources.Load<Sprite>("Images/card1");
+        // Card2Damage = Resources.Load<Sprite>("Images/card2");
+        // Card3Damage = Resources.Load<Sprite>("Images/card3");
         // sprites for 1, 2 and 3 damage
-        cardSprites[0] = Card1Damage;
-        cardSprites[1] = Card2Damage;
-        cardSprites[2] = Card3Damage;
-        Debug.Log("1");
+        // cardSprites[0] = Card1Damage;
+        // cardSprites[1] = Card2Damage;
+        // cardSprites[2] = Card3Damage;
         // 1, 2 and 3 damage to be passed into card damage variable
         cardEffects[0] = 1;
         cardEffects[1] = 2;
@@ -54,12 +52,12 @@ public class gameManager : MonoBehaviour
         {
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
-            // set the images of each card in the card slots UI
-            cardSlotOne = cardSprites[cardSlots[0]];
-            cardSlotTwo = cardSprites[cardSlots[1]];
-            cardSlotThree = cardSprites[cardSlots[2]];
-            cardSlotFour = cardSprites[cardSlots[3]];
-            cardSlotFive = cardSprites[cardSlots[4]];
+            // set the number of each card in the card slots UI
+            cardSlotOne.text = cardEffects[cardSlots[0]].ToString();
+            cardSlotTwo.text = cardEffects[cardSlots[1]].ToString();
+            cardSlotThree.text = cardEffects[cardSlots[2]].ToString();
+            cardSlotFour.text = cardEffects[cardSlots[3]].ToString();
+            cardSlotFive.text = cardEffects[cardSlots[4]].ToString();
             // if the button is pressed, choose that card in that slot
             if (Input.GetKeyDown("q"))
             {
