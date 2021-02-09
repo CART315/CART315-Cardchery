@@ -26,6 +26,10 @@ public class gameManager : MonoBehaviour
     public static int gameScreens = 0;
     // public static Sprite[] cardSprites = new Sprite[3];
     public static int[] cardEffects = new int[3];
+    // cooldown timer for throwing cards
+    public static float throwCooldownTimer = 0;
+    public static float throwCooldownTotal = 0.3f;
+    public static bool throwCooldownStarted = false;
 
     // Start is called before the first frame update
     void Start()
@@ -78,6 +82,15 @@ public class gameManager : MonoBehaviour
             if (Input.GetKeyDown("t"))
             {
                 cardChosen = 4;
+            }
+            if (throwCooldownStarted == true)
+            {
+                throwCooldownTimer += Time.deltaTime;
+                if (throwCooldownTimer >= throwCooldownTotal)
+                {
+                    throwCooldownStarted = false;
+                    throwCooldownTimer = 0;
+                }
             }
         }
         if (gameScreens == 0 || gameScreens == 2)

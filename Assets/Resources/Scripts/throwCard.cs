@@ -46,11 +46,8 @@ public class throwCard : MonoBehaviour
         {
             // go to the hand area
             Vector3 cardPositionInHand = new Vector3(cardLocation.transform.position.x, cardLocation.transform.position.y, cardLocation.transform.position.z);
-           // Debug.Log("hand" + cardPositionInHand);
-           // Debug.Log("current" + transform.position);
-          //  transform.position = cardPositionInHand;
             // if click, throw it and spawn another card in the hand
-            if (Input.GetMouseButtonDown(0) && thrown == false)
+            if (Input.GetMouseButtonDown(0) && thrown == false && gameManager.throwCooldownStarted == false)
             {
                 thrown = true;
                 GetComponent<Rigidbody>().useGravity = true;
@@ -60,7 +57,10 @@ public class throwCard : MonoBehaviour
                 // find how much damage this would deal based on the card chosen
                 damage = gameManager.cardEffects[gameManager.cardSlots[gameManager.cardChosen]];
                 // randomly choose another card to replace that slot
-                gameManager.cardSlots[gameManager.cardChosen] = Random.Range(0, 2);
+                gameManager.cardSlots[gameManager.cardChosen] = Random.Range(0, 3);
+                Debug.Log(gameManager.cardSlots[gameManager.cardChosen] + "ok" + gameManager.cardChosen);
+                // start the throw cooldown timer
+                gameManager.throwCooldownStarted = true;
             }
         }
     }
