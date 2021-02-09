@@ -41,7 +41,6 @@ public class targetCode : MonoBehaviour
         targetHealth -= amount;
         targetHealthText.text = targetHealth.ToString();
         healthBar.value = targetHealth / targetMaxHealth;
-        Debug.Log("bar" + healthBar.value);
         // if this dies, gain points
         if (targetHealth <= 0)
         {

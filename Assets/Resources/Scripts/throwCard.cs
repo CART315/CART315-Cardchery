@@ -10,7 +10,7 @@ public class throwCard : MonoBehaviour
     bool thrown = false;
     int damage = 1;
     int speed = 30;
-//    Vector3 throwingForce = new Vector3(0, 0, 700f);
+
     Vector3 throwDirection;
     // Start is called before the first frame update
     void Start()
@@ -57,7 +57,10 @@ public class throwCard : MonoBehaviour
                 transform.parent = null;
                 makeCard.cardHave = false;
                 throwDirection = player.transform.forward;
-                damage = 1;
+                // find how much damage this would deal based on the card chosen
+                damage = gameManager.cardEffects[gameManager.cardSlots[gameManager.cardChosen]];
+                // randomly choose another card to replace that slot
+                gameManager.cardSlots[gameManager.cardChosen] = Random.Range(0, 2);
             }
         }
     }
