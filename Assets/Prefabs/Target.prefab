@@ -30,8 +30,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: -0.00000020861}
   m_LocalScale: {x: 5.245914, y: 4.271044, z: 3.0587}
   m_Children:
-  - {fileID: 6404757605553105420}
   - {fileID: 8412870272875044661}
+  - {fileID: 6404757605553105420}
   m_Father: {fileID: 8651675546217794143}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: -90}
@@ -281,12 +281,12 @@ RectTransform:
   m_LocalScale: {x: 0.0075426837, y: 0.0075426837, z: 0.0075426837}
   m_Children: []
   m_Father: {fileID: 3123642819758291155}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.001, y: -0.017}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0, y: -0.019}
+  m_SizeDelta: {x: 22.95326, y: 26.2256}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4208887830421360884
 CanvasRenderer:
@@ -433,7 +433,7 @@ RectTransform:
   - {fileID: 2994733595713018650}
   - {fileID: 164535091219407778}
   m_Father: {fileID: 3123642819758291155}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -602,6 +602,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3380f55eae7c0a4da2d5b8193a79ca8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetHealth: 0
+  targetMaxHealth: 0
+  healthBarUI: {fileID: 1074949501110752340}
+  targetHealthText: {fileID: 8047124357558389376}
+  healthBar: {fileID: 5647944286297119815}
 --- !u!54 &4831672065306151401
 Rigidbody:
   m_ObjectHideFlags: 0

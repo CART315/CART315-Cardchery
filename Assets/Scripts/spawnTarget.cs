@@ -21,8 +21,8 @@ public class spawnTarget : MonoBehaviour
         spawnCurrentTime++;
         if (spawnCurrentTime >= spawnTimer)
         {
-            Vector3 cardPositionInHand = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
-            GameObject.Instantiate(Target, this.transform.position, Quaternion.identity);
+           // Vector3 cardPositionInHand = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
+            GameObject newTarget = Instantiate(Target, this.transform.position, Quaternion.identity);
             spawnCurrentTime = 0.0f;
             spawnTimer = Random.Range(300, 800);
         }

@@ -15,12 +15,15 @@ public class gameManager : MonoBehaviour
     Sprite Card1Damage;
     Sprite Card2Damage;
     Sprite Card3Damage;
+    // which screen we are on (menu, game, end)
+    public static int gameScreens = 0;
     public static Sprite[] cardSprites;
     public static int[] cardEffects;
 
     // Start is called before the first frame update
     void Start()
     {
+        gameScreens = 0;
         // add the images and effects of each card type into the arrays
         Card1Damage = Resources.Load<Sprite>("card1");
         Card2Damage = Resources.Load<Sprite>("card2");
@@ -32,6 +35,17 @@ public class gameManager : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        // cursor lock based on screen
+        if (gameScreens == 1)
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        if (gameScreens == 0 || gameScreens == 2)
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
         // if the button is pressed, choose that card in that slot
         if (Input.GetKeyDown("q"))
         {
@@ -59,6 +73,7 @@ public class gameManager : MonoBehaviour
     public void EndGame()
     {
         // restore the cursor from the screen
+        gameScreens = 2;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadSceneAsync("End", LoadSceneMode.Single);

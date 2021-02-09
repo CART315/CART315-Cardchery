@@ -18,6 +18,7 @@ public class MainMenuCode : MonoBehaviour
         timer.timeLeftShown = 60;
         scoring.playerScore = 0;
         // remove the cursor from the screen
+        gameManager.gameScreens = 1;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         SceneManager.LoadSceneAsync("Game", LoadSceneMode.Single);
